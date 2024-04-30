@@ -11,32 +11,27 @@ namespace GameFramework
     {
         private Form GameForm;
         private int Gravity;
-        private List<PictureBox> GravityObjects;
+        private List<GameObject> gameObjects;
         public Game(Form form,int gravity)
         {
             GameForm = form;
             Gravity = gravity;
-            GravityObjects = new List<PictureBox>();
+            gameObjects = new List<GameObject>();
         }
-        public void addGameObject(Image image, int top, int left, bool gravity)
+        public void addGameObject(Image image, int top, int left)
         {
-            PictureBox picture = new PictureBox();
-            picture.Image = image;
-            picture.Top = top;
-            picture.Left = left;
-            picture.BackColor = Color.Transparent;
-            picture.SizeMode = PictureBoxSizeMode.StretchImage;
-            GameForm.Controls.Add(picture);
-            if (gravity)
-            {
-                GravityObjects.Add(picture);
-            }
+            GameObject go = new GameObject(image, top, left);
+            gameObjects.Add(go);
+            GameForm.Controls.Add(go.GetPb());
         }
         public void update()
         {
-            foreach (PictureBox picture in GravityObjects)
+            foreach(var go in gameObjects)
             {
-                picture.Top += Gravity;
+                if(go.gravity)
+                {
+                    go.move(Gravity);
+                }
             }
         }
     }
