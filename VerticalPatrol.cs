@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace GameFramework
 {
-    public class VericalPatrol : IMovement
+    public class VerticalPatrol : IMovement
     {
         private int Speed;
         private Point Boundary;
         private Directions Direction;
         private int Offset = 90;
-        public VericalPatrol(int speed, Point boundary, Directions direction)
+        public VerticalPatrol(int speed, Point boundary, Directions direction)
         {
             Speed = speed;
             Boundary = boundary;
