@@ -10,13 +10,13 @@ namespace GameFramework
 {
     public class GameObject
     {
-        private PictureBox Pb;
-        public bool gravity;
+        internal PictureBox Pb { get => Pb; set => Pb = value; }
+        IMovement Controller;
         public PictureBox GetPb()
         {
             return Pb;
         }
-        public GameObject(Image img, int top, int left)
+        public GameObject(Image img, int top, int left, IMovement controller)
         {
             Pb = new PictureBox
             {
@@ -26,10 +26,11 @@ namespace GameFramework
                 BackColor = Color.Transparent,
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
+            Controller = controller;
         }
-        public virtual void move(int gravity)
+        public void Update()
         {
-            Pb.Top += gravity;
+            Pb.Location = Controller.Move(Pb.Location);
         }
     }
 }

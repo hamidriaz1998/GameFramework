@@ -18,9 +18,9 @@ namespace GameFramework
             Gravity = gravity;
             gameObjects = new List<GameObject>();
         }
-        public void addGameObject(Image image, int top, int left)
+        public void addGameObject(Image image, int top, int left, IMovement controller)
         {
-            GameObject go = new GameObject(image, top, left);
+            GameObject go = new GameObject(image, top, left,controller);
             gameObjects.Add(go);
             GameForm.Controls.Add(go.GetPb());
         }
@@ -28,10 +28,7 @@ namespace GameFramework
         {
             foreach(var go in gameObjects)
             {
-                if(go.gravity)
-                {
-                    go.move(Gravity);
-                }
+                go.Update();     
             }
         }
     }
