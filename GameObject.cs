@@ -11,7 +11,7 @@ namespace GameFramework
     public class GameObject
     {
         internal PictureBox Pb { get => Pb; set => Pb = value; }
-        IMovement Controller;
+        private IMovement Controller;
         public GameObject(Image img, int top, int left, IMovement controller)
         {
             Pb = new PictureBox
