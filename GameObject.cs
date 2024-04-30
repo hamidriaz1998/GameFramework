@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GameFramework
 {
-    internal class GameObject
+    public class GameObject
     {
         private PictureBox Pb;
         public bool gravity;
@@ -16,7 +16,7 @@ namespace GameFramework
         {
             return Pb;
         }
-        public GameObject(Image img,int top,int left)
+        public GameObject(Image img, int top, int left)
         {
             Pb = new PictureBox
             {
