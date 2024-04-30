@@ -22,7 +22,7 @@ namespace GameFramework
         {
             GameObject go = new GameObject(image, top, left,controller);
             gameObjects.Add(go);
-            GameForm.Controls.Add(go.GetPb());
+            GameForm.Controls.Add(go.Pb);
         }
         public void update()
         {
