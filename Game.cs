@@ -10,14 +10,24 @@ namespace GameFramework
     public class Game
     {
         private Form GameForm;
-        private int Gravity;
         private List<GameObject> gameObjects;
-        public Game(Form form,int gravity)
+        // Singleton pattern
+        private static Game Instance;
+        public static Game GetInstance(Form form)
+        {
+            if (Instance == null)
+            {
+                Instance = new Game(form);
+            }
+            return Instance;
+        }
+        // Private constructor
+        private Game(Form form)
         {
             GameForm = form;
-            Gravity = gravity;
             gameObjects = new List<GameObject>();
         }
+        // Methods
         public void addGameObject(Image image, int top, int left, IMovement controller)
         {
             GameObject go = new GameObject(image, top, left,controller);
