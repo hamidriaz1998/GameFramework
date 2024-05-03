@@ -12,7 +12,8 @@ namespace GameFramework
     {
         internal PictureBox Pb { get => Pb; set => Pb = value; }
         private IMovement Controller;
-        public GameObject(Image img, int top, int left, IMovement controller)
+        private GameObjectType Type { get => Type; set => Type = value; }
+        public GameObject(Image img, int top, int left, IMovement controller, GameObjectType type)
         {
             Pb = new PictureBox
             {
@@ -23,6 +24,7 @@ namespace GameFramework
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
             Controller = controller;
+            Type = type;
         }
         public void Update()
         {

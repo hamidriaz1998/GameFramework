@@ -48,6 +48,7 @@
     <Compile Include="Directions.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="GameObjectType.cs" />
     <Compile Include="HorizontalPatrol.cs" />
     <Compile Include="IMovement.cs" />
     <Compile Include="KeyboardHandler.cs" />
