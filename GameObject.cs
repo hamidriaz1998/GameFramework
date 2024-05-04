@@ -10,9 +10,9 @@ namespace GameFramework
 {
     public class GameObject
     {
-        internal PictureBox Pb { get => Pb; set => Pb = value; }
+        internal PictureBox Pb { get; set; }
         private IMovement Controller;
-        internal GameObjectType Type { get => Type; set => Type = value; }
+        internal GameObjectType Type { get; set; }
         public GameObject(Image img, int top, int left, IMovement controller, GameObjectType type)
         {
             Pb = new PictureBox
