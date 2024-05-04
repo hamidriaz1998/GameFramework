@@ -7,12 +7,12 @@ using System.Drawing;
 
 namespace GameFramework
 {
-    public class HorizontalPatrol: IMovement
+    public class HorizontalPatrol : IMovement
     {
         private int Speed;
         private Point Boundary;
         private Directions Direction;
-        private int Offset = 90;
+        private int Offset = 115;
         public HorizontalPatrol(int speed, Point boundary, Directions direction)
         {
             Speed = speed;
