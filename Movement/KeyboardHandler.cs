@@ -14,6 +14,11 @@ namespace GameFramework
         private System.Drawing.Point Boundary;
         private int Offset = 70;
 
+        public KeyboardHandler(int speed, System.Drawing.Point boundary)
+        {
+            Speed = speed;
+            Boundary = boundary;
+        }
         public System.Drawing.Point Move(System.Drawing.Point location)
         {
             if (Keyboard.IsKeyPressed(Key.W))
