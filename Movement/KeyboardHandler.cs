@@ -12,7 +12,8 @@ namespace GameFramework
     {
         private int Speed;
         private System.Drawing.Point Boundary;
-        private int Offset = 70;
+        private int OffsetY = 90;
+        private int OffsetX = 115;
 
         public KeyboardHandler(int speed, System.Drawing.Point boundary)
         {
@@ -34,9 +35,9 @@ namespace GameFramework
             }
             else if (Keyboard.IsKeyPressed(Key.S))
             {
-                if ((location.Y + Offset) >= Boundary.Y)
+                if ((location.Y + OffsetY) >= Boundary.Y)
                 {
-                    location.Y = Boundary.Y - Offset;
+                    location.Y = Boundary.Y - OffsetY;
                 }
                 else
                 {
@@ -56,9 +57,9 @@ namespace GameFramework
             }
             else if (Keyboard.IsKeyPressed(Key.D))
             {
-                if ((location.X + Offset) >= Boundary.X)
+                if ((location.X + OffsetX) >= Boundary.X)
                 {
-                    location.X = Boundary.X - Offset;
+                    location.X = Boundary.X - OffsetX;
                 }
                 else
                 {
