@@ -45,12 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Movement\Directions.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameObject.cs" />
-    <Compile Include="GameObjectType.cs" />
+    <Compile Include="Enum\Directions.cs" />
+    <Compile Include="Core\Game.cs" />
+    <Compile Include="Core\GameObject.cs" />
+    <Compile Include="Enum\GameObjectType.cs" />
     <Compile Include="Movement\HorizontalPatrol.cs" />
-    <Compile Include="Movement\IMovement.cs" />
+    <Compile Include="Interface\IMovement.cs" />
     <Compile Include="Movement\KeyboardHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Movement\VerticalPatrol.cs" />
