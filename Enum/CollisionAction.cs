@@ -1,4 +1,4 @@
-﻿namespace GameFramework.Enum
+﻿namespace GameFramework
 {
     public enum CollisionAction
     {

@@ -10,7 +10,8 @@ namespace GameFramework
     public class Game
     {
         private Form GameForm;
-        private List<GameObject> gameObjects;
+        private List<GameObject> GameObjects;
+        private List<CollisionDetection> CollisionDetections;
         // Singleton pattern
         private static Game Instance;
         public static Game GetInstance(Form form)
@@ -25,28 +26,37 @@ namespace GameFramework
         private Game(Form form)
         {
             GameForm = form;
-            gameObjects = new List<GameObject>();
+            GameObjects = new List<GameObject>();
         }
         // Methods
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)
         {
             GameObject go = new GameObject(image, top, left,controller,type);
-            gameObjects.Add(go);
+            GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
         }
         public int GetGameObjectCount()
         {
-            return gameObjects.Count;
+            return GameObjects.Count;
         }
         public int GetGameObjectCount(GameObjectType type)
         {
-            return gameObjects.Count(go => go.Type == type);
+            return GameObjects.Count(go => go.Type == type);
+        }
+        public void AddCollsion(GameObjectType type1, GameObjectType type2, CollisionAction action)
+        {
+            CollisionDetection cd = new CollisionDetection(type1, type2, action);
+            CollisionDetections.Add(cd);
         }
         public void Update()
         {
-            foreach(var go in gameObjects)
+            foreach(var go in GameObjects)
             {
                 go.Update();     
+            }
+            foreach (var cd in CollisionDetections)
+            {
+                cd.CheckCollision(GameObjects);
             }
         }
     }
