@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameFramework.CollisionDetection
-{
+namespace GameFramework{
     public class CollisionDetection
     {
         private GameObjectType Type1;
