@@ -23,8 +23,9 @@ namespace GameFramework
                 Top = top,
                 Left = left,
                 BackColor = Color.Transparent,
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
+                Width = img.Width,
+                Height = img.Height
+        };
             Controller = controller;
             Type = type;
             Health = 100;

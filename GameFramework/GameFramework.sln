@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFramework", "GameFramework.csproj", "{3E5303C9-30A1-41AF-B540-DCCD941E9F2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceWars", "..\SpaceWars\SpaceWars.csproj", "{02AB739F-6668-4442-8D5A-ED91EFB61AE6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{3E5303C9-30A1-41AF-B540-DCCD941E9F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E5303C9-30A1-41AF-B540-DCCD941E9F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E5303C9-30A1-41AF-B540-DCCD941E9F2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02AB739F-6668-4442-8D5A-ED91EFB61AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02AB739F-6668-4442-8D5A-ED91EFB61AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02AB739F-6668-4442-8D5A-ED91EFB61AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02AB739F-6668-4442-8D5A-ED91EFB61AE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

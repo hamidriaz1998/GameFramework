@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpaceWars.Properties
+namespace GravityGame.Properties
 {
 
 

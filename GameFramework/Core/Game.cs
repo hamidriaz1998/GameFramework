@@ -27,6 +27,7 @@ namespace GameFramework
         {
             GameForm = form;
             GameObjects = new List<GameObject>();
+            CollisionDetections = new List<CollisionDetection>();
         }
         // Methods
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)

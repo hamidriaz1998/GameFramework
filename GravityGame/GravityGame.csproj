@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02AB739F-6668-4442-8D5A-ED91EFB61AE6}</ProjectGuid>
+    <ProjectGuid>{86906D0A-8BCE-41CB-A918-D11D1DDE64C6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SpaceWars</RootNamespace>
-    <AssemblyName>SpaceWars</AssemblyName>
+    <RootNamespace>GravityGame</RootNamespace>
+    <AssemblyName>GravityGame</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GameFramework">
+    <Reference Include="GameFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\GameFramework\bin\Debug\GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -68,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +83,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finalship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinalEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finalgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finalred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2024-05-07 at 10.14.01_1ebb7e91-min.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\712b085aae1eed3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
