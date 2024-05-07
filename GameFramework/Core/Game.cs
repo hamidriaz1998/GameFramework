@@ -11,16 +11,17 @@ namespace GameFramework
     public class Game
     {
         private int Score;
+        private Point Boundary;
         private Form GameForm;
         private List<GameObject> GameObjects;
         private List<CollisionDetection> CollisionDetections;
         // Singleton pattern
         private static Game Instance;
-        public static Game GetInstance(Form form)
+        public static Game GetInstance(Form form, Point boundary)
         {
             if (Instance == null)
             {
-                Instance = new Game(form);
+                Instance = new Game(form,boundary);
             }
             return Instance;
         }
@@ -29,16 +30,21 @@ namespace GameFramework
             return Instance;
         }
         // Private constructor
-        private Game(Form form)
+        private Game(Form form,Point boundary)
         {
             GameForm = form;
             GameObjects = new List<GameObject>();
             CollisionDetections = new List<CollisionDetection>();
+            Boundary = boundary;
             Score = 0;
         }
         // Methods
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)
         {
+            if (type == GameObjectType.PlayerBullet && GetGameObjectCount(GameObjectType.PlayerBullet) > 5)
+            {
+                return;
+            }
             GameObject go = new GameObject(image, top, left,controller,type);
             GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
@@ -68,8 +74,25 @@ namespace GameFramework
             CollisionDetection cd = new CollisionDetection(type1, type2, action);
             CollisionDetections.Add(cd);
         }
+        public void RemoveGameObject(GameObject gameObject)
+        {
+            GameObjects.Remove(gameObject);
+            GameForm.Controls.Remove(gameObject.Pb);
+        }
         public int GetScore() { return Score; }
         public void IncreaseScore(int points) { Score += points; }
+        private void RemoveOutOfBoundsBullets()
+        {
+            var bullets = GameObjects.Where(go => go.Type == GameObjectType.PlayerBullet || go.Type == GameObjectType.EnemyBullet).ToList();
+            foreach(var bullet in bullets)
+            {
+                var location = bullet.Pb.Location;
+                if (location.X <= 0 || location.Y <= 0 || location.Y >= Boundary.Y || location.X >= Boundary.X)
+                {
+                    RemoveGameObject(bullet);
+                }
+            }
+        }
         public void Update()
         {
             for(int i = 0;i<GameObjects.Count;i++)
@@ -80,6 +103,7 @@ namespace GameFramework
             {
                 cd.CheckCollision(GameObjects);
             }
+            RemoveOutOfBoundsBullets();
         }
     }
 }
