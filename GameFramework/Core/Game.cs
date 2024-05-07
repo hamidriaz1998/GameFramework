@@ -10,6 +10,7 @@ namespace GameFramework
 {
     public class Game
     {
+        private int Score;
         private Form GameForm;
         private List<GameObject> GameObjects;
         private List<CollisionDetection> CollisionDetections;
@@ -29,6 +30,7 @@ namespace GameFramework
             GameForm = form;
             GameObjects = new List<GameObject>();
             CollisionDetections = new List<CollisionDetection>();
+            Score = 0;
         }
         // Methods
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)
@@ -56,9 +58,11 @@ namespace GameFramework
             CollisionDetection cd = new CollisionDetection(type1, type2, action);
             CollisionDetections.Add(cd);
         }
+        public int GetScore() { return Score; }
+        public void IncreaseScore(int points) { Score += points; }
         public void Update()
         {
-            foreach(GameObject go in GameObjects)
+            foreach (GameObject go in GameObjects)
             {
                 go.Update();     
             }
