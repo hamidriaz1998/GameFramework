@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CollisionDetection\CollisionDetection.cs" />
     <Compile Include="Core\Character.cs" />
+    <Compile Include="Core\Player.cs" />
     <Compile Include="Enum\CollisionAction.cs" />
     <Compile Include="Enum\Directions.cs" />
     <Compile Include="Core\Game.cs" />
