@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.Movement;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace GameFramework.Core
 
         public override void Fire()
         {
-            throw new NotImplementedException();
+            Game.GetInstance().AddGameObject(FireImage, Pb.Top+15, Pb.Left+40, new BulletMovement(5, Directions.Up), GameObjectType.PlayerBullet);
         }
     }
 }

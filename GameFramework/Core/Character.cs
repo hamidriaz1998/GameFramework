@@ -12,7 +12,7 @@ namespace GameFramework.Core
     {
         ProgressBar HealthBar { get; set; }
         Label Label;
-        Image FireImage;
+        protected Image FireImage;
 
         public Character(Image img, int top, int left, IMovement controller, GameObjectType type,ProgressBar HealthBar, Label label, Image fireImage) : base(img, top, left, controller, type)
         {

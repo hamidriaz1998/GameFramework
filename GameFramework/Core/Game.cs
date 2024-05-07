@@ -72,9 +72,9 @@ namespace GameFramework
         public void IncreaseScore(int points) { Score += points; }
         public void Update()
         {
-            foreach (GameObject go in GameObjects)
+            for(int i = 0;i<GameObjects.Count;i++)
             {
-                go.Update();     
+                GameObjects[i].Update();
             }
             foreach (var cd in CollisionDetections)
             {

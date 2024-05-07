@@ -54,6 +54,7 @@
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameObject.cs" />
     <Compile Include="Enum\GameObjectType.cs" />
+    <Compile Include="Movement\BulletMovement.cs" />
     <Compile Include="Movement\HorizontalPatrol.cs" />
     <Compile Include="Interface\IMovement.cs" />
     <Compile Include="Movement\KeyboardHandler.cs" />
