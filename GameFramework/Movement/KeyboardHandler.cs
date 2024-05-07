@@ -24,9 +24,9 @@ namespace GameFramework
         {
             if (Keyboard.IsKeyPressed(Key.W))
             {
-                if (location.Y - Speed <= 0)
+                if (location.Y - Speed <= 50)
                 {
-                    location.Y = 0;
+                    location.Y = 50;
                 }
                 else
                 {

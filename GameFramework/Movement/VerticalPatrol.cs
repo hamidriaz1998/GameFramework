@@ -25,7 +25,7 @@ namespace GameFramework
             {
                 Direction = Directions.Up;
             }
-            else if (location.Y - Speed <= 0)
+            else if (location.Y - Speed <= 50)
             {
                 Direction = Directions.Down;
             }
