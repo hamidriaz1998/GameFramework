@@ -14,7 +14,6 @@ namespace GameFramework
         private IMovement Controller;
         internal GameObjectType Type { get; set; }
         private int Health;
-        private int Score;
         public GameObject(Image img, int top, int left, IMovement controller, GameObjectType type)
         {
             Pb = new PictureBox

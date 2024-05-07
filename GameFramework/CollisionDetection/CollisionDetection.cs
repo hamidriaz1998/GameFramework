@@ -24,6 +24,11 @@ namespace GameFramework{
             {
                 foreach (var go2 in type2Objects)
                 {
+                    if (go1 == go2)
+                    {
+                        // To avoid checking collision with self
+                        continue;
+                    }
                     if (go1.Pb.Bounds.IntersectsWith(go2.Pb.Bounds))
                     // TODO: Implement collision action
                     {
@@ -32,6 +37,11 @@ namespace GameFramework{
                             go1.IncreaseHealth(5);
                             go2.IncreaseHealth(5);
                         }   
+                        else if (Action == CollisionAction.DecreaseHealth)
+                        {
+                            go1.DecreaseHealth(5);
+                            go2.DecreaseHealth(5);
+                        }
                     }
                 }
             }

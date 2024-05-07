@@ -24,17 +24,22 @@ namespace GravityGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Set Form Properties
             this.Width = Screen.PrimaryScreen.WorkingArea.Width;
             this.Height = Screen.PrimaryScreen.WorkingArea.Height;
             this.BackgroundImage = Resources.afds;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            // Intialize Game Instance
             Boundary = new Point(this.Width - 25 , this.Height - 70);
             game = Game.GetInstance(this);
+            // Add Game Objects
             game.AddGameObject(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player);
             game.AddGameObject(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy);
             game.AddGameObject(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy);
             game.AddGameObject(Resources.finalgreen,50,200,new Teleportation(Boundary), GameObjectType.Enemy);
+            // Add Collisions
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
+            game.AddCollsion(GameObjectType.Player,GameObjectType.Enemy,CollisionAction.DecreaseHealth);
         }
 
         private void GameLoop_Tick(object sender, EventArgs e)
