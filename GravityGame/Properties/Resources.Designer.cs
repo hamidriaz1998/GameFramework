@@ -129,5 +129,15 @@ namespace GravityGame.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xdproduction_ezgif_com_rotate {
+            get {
+                object obj = ResourceManager.GetObject("Xdproduction_ezgif_com_rotate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

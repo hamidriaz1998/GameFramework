@@ -32,7 +32,7 @@ namespace GravityGame
             // Intialize Game Instance
             Boundary = new Point(this.Width - 25 , this.Height - 70);
             game = Game.GetInstance(this);
-            // Add Game Objects
+            // Add Game Characters
             game.AddCharacter(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player,PlayerHealth,PlayerLabel);
             game.AddCharacter(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy,RedHealth,RedLabel);
             game.AddCharacter(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy,BlueHealth,BlueLabel);

@@ -106,5 +106,11 @@
   <ItemGroup>
     <None Include="Resources\daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xd production.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xdproduction-ezgif.com-rotate.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
