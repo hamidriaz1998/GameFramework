@@ -30,6 +30,10 @@ namespace GameFramework
             CollisionDetections = new List<CollisionDetection>();
         }
         // Methods
+        public int GetPlayerHealth()
+        {
+            return GameObjects.Find(go => go.Type == GameObjectType.Player).GetHealth();
+        }
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)
         {
             GameObject go = new GameObject(image, top, left,controller,type);
