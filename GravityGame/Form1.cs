@@ -33,10 +33,10 @@ namespace GravityGame
             Boundary = new Point(this.Width - 25 , this.Height - 70);
             game = Game.GetInstance(this);
             // Add Game Objects
-            game.AddGameObject(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player);
-            game.AddGameObject(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy);
-            game.AddGameObject(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy);
-            game.AddGameObject(Resources.finalgreen,50,200,new Teleportation(Boundary), GameObjectType.Enemy);
+            game.AddCharacter(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player,PlayerHealth,PlayerLabel);
+            game.AddCharacter(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy,RedHealth,RedLabel);
+            game.AddCharacter(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy,BlueHealth,BlueLabel);
+            game.AddCharacter(Resources.finalgreen,50,200,new Teleportation(Boundary), GameObjectType.Enemy,GreenHealth,GreenLabel);
             // Add Collisions
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
             game.AddCollsion(GameObjectType.Player,GameObjectType.Enemy,CollisionAction.DecreaseHealth);
@@ -45,7 +45,6 @@ namespace GravityGame
         private void GameLoop_Tick(object sender, EventArgs e)
         {
             game.Update();
-            PlayerHealth.Value = game.GetPlayerHealth();
         }
     }
 }
