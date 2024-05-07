@@ -28,7 +28,7 @@ namespace GameFramework
         {
             if (Keyboard.IsKeyPressed(Key.Space))
             {
-
+                Player.Fire();
             }
             if (Keyboard.IsKeyPressed(Key.W))
             {
