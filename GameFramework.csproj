@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollisionDetection\CollisionDetection.cs" />
+    <Compile Include="Enum\CollisionAction.cs" />
     <Compile Include="Enum\Directions.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameObject.cs" />
