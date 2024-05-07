@@ -24,6 +24,10 @@ namespace GameFramework
             }
             return Instance;
         }
+        internal static Game GetInstance()
+        {
+            return Instance;
+        }
         // Private constructor
         private Game(Form form)
         {
@@ -42,13 +46,13 @@ namespace GameFramework
         public void AddEnemy(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label,Image FireImage)
         {
             Enemy character = new Enemy(image, top, left, controller, type,healthBar,label,FireImage);
-            GameObjects.Add((GameObject)character);
+            GameObjects.Add(character);
             GameForm.Controls.Add(character.Pb);
         }
         public void AddPlayer(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label,Image FireImage)
         {
             Player player = new Player(image, top, left, controller, type, healthBar, label, FireImage);
-            GameObjects.Add((GameObject)player);
+            GameObjects.Add(player);
             GameForm.Controls.Add(player.Pb);
         }
         public int GetGameObjectCount()
