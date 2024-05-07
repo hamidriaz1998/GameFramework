@@ -8,16 +8,18 @@ using System.Windows.Forms;
 
 namespace GameFramework.Core
 {
-    public class Character:GameObject
+    public abstract class Character:GameObject
     {
         ProgressBar HealthBar { get; set; }
         Label Label;
+        Image FireImage;
 
-        public Character(Image img, int top, int left, IMovement controller, GameObjectType type,ProgressBar HealthBar, Label label) : base(img, top, left, controller, type)
+        public Character(Image img, int top, int left, IMovement controller, GameObjectType type,ProgressBar HealthBar, Label label, Image fireImage) : base(img, top, left, controller, type)
         {
             this.HealthBar = HealthBar;
             this.Label = label;
             HealthBar.Value = 100;
+            FireImage = fireImage;
         }
         public void DecreaseHealth(int points)
         {
@@ -37,5 +39,6 @@ namespace GameFramework.Core
         {
             Label.Text = text;
         }
+        public abstract void Fire();
     }
 }
