@@ -45,6 +45,7 @@ namespace GravityGame
         private void GameLoop_Tick(object sender, EventArgs e)
         {
             game.Update();
+            ScoreLabel.Text = "Score: " + game.GetScore();
         }
     }
 }

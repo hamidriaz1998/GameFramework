@@ -39,6 +39,7 @@
             this.RedHealth = new System.Windows.Forms.ProgressBar();
             this.PlayerLabel = new System.Windows.Forms.Label();
             this.PlayerHealth = new System.Windows.Forms.ProgressBar();
+            this.ScoreLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.ScoreLabel);
             this.panel1.Controls.Add(this.BlueLabel);
             this.panel1.Controls.Add(this.BlueHealth);
             this.panel1.Controls.Add(this.GreenLabel);
@@ -137,6 +139,17 @@
             this.PlayerHealth.Size = new System.Drawing.Size(100, 23);
             this.PlayerHealth.TabIndex = 0;
             // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ScoreLabel.Location = new System.Drawing.Point(846, 27);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(63, 18);
+            this.ScoreLabel.TabIndex = 8;
+            this.ScoreLabel.Text = "Score: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +177,7 @@
         private System.Windows.Forms.ProgressBar GreenHealth;
         private System.Windows.Forms.Label RedLabel;
         private System.Windows.Forms.ProgressBar RedHealth;
+        private System.Windows.Forms.Label ScoreLabel;
     }
 }
 
