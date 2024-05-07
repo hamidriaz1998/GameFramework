@@ -32,6 +32,8 @@ namespace GravityGame
             game = Game.GetInstance(this);
             game.AddGameObject(Resources.finalship, 880,840,new KeyboardHandler(15,Boundary), GameObjectType.Player);
             game.AddGameObject(Resources.finalred,50,840,new HorizontalPatrol(8,Boundary,Directions.Left), GameObjectType.Enemy);
+            game.AddGameObject(Resources.FinalEnemy,50,1800,new VerticalPatrol(8,Boundary,Directions.Down), GameObjectType.Enemy);
+            game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
         }
 
         private void GameLoop_Tick(object sender, EventArgs e)

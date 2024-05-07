@@ -29,8 +29,8 @@ namespace GameFramework{
                     {
                         if (Action == CollisionAction.IncreaseHealth)
                         {
-                            
-
+                            go1.IncreaseHealth(5);
+                            go2.IncreaseHealth(5);
                         }   
                     }
                 }
