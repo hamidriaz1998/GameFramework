@@ -30,9 +30,10 @@ namespace GravityGame
             this.BackgroundImageLayout = ImageLayout.Stretch;
             Boundary = new Point(this.Width - 25 , this.Height - 70);
             game = Game.GetInstance(this);
-            game.AddGameObject(Resources.finalship, 880,840,new KeyboardHandler(15,Boundary), GameObjectType.Player);
-            game.AddGameObject(Resources.finalred,50,840,new HorizontalPatrol(8,Boundary,Directions.Left), GameObjectType.Enemy);
-            game.AddGameObject(Resources.FinalEnemy,50,1800,new VerticalPatrol(8,Boundary,Directions.Down), GameObjectType.Enemy);
+            game.AddGameObject(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player);
+            game.AddGameObject(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy);
+            game.AddGameObject(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy);
+            game.AddGameObject(Resources.finalgreen,50,200,new Teleportation(Boundary), GameObjectType.Enemy);
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
         }
 
