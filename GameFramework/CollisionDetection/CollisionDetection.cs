@@ -37,15 +37,15 @@ namespace GameFramework{
                         {
                             Character c1 = (Character)go1;
                             Character c2 = (Character)go2;
-                            c1.IncreaseHealth(5);
-                            c2.IncreaseHealth(5);
+                            c1.IncreaseHealth(1);
+                            c2.IncreaseHealth(1);
                         }   
                         else if (Action == CollisionAction.DecreaseHealth)
                         {
                             Character c1 = (Character)go1;
                             Character c2 = (Character)go2;
-                            c1.DecreaseHealth(5);
-                            c2.DecreaseHealth(5);
+                            c1.DecreaseHealth(1);
+                            c2.DecreaseHealth(1);
                         }
                     }
                 }
