@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.Core;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -30,15 +31,17 @@ namespace GameFramework
             CollisionDetections = new List<CollisionDetection>();
         }
         // Methods
-        public int GetPlayerHealth()
-        {
-            return GameObjects.Find(go => go.Type == GameObjectType.Player).GetHealth();
-        }
         public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type)
         {
             GameObject go = new GameObject(image, top, left,controller,type);
             GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
+        }
+        public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label)
+        {
+            Character character = new Character(image, top, left, controller, type,healthBar,label);
+            GameObjects.Add((GameObject)character);
+            GameForm.Controls.Add(character.Pb);
         }
         public int GetGameObjectCount()
         {
@@ -55,7 +58,7 @@ namespace GameFramework
         }
         public void Update()
         {
-            foreach(var go in GameObjects)
+            foreach(GameObject go in GameObjects)
             {
                 go.Update();     
             }

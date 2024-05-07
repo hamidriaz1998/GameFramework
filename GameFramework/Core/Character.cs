@@ -33,5 +33,9 @@ namespace GameFramework.Core
             else
                 HealthBar.Value += points;
         }
+        public void UpdateLabelText(string text)
+        {
+            Label.Text = text;
+        }
     }
 }

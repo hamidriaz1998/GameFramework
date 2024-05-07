@@ -1,11 +1,12 @@
-﻿using System;
+﻿using GameFramework.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GameFramework{
-    public class CollisionDetection
+    internal class CollisionDetection
     {
         private GameObjectType Type1;
         private GameObjectType Type2;
@@ -20,9 +21,9 @@ namespace GameFramework{
         {
             var type1Objects = gameObjects.Where(go => go.Type == Type1);
             var type2Objects = gameObjects.Where(go => go.Type == Type2);
-            foreach (var go1 in type1Objects)
+            foreach (GameObject go1 in type1Objects)
             {
-                foreach (var go2 in type2Objects)
+                foreach (GameObject go2 in type2Objects)
                 {
                     if (go1 == go2)
                     {
@@ -34,13 +35,17 @@ namespace GameFramework{
                     {
                         if (Action == CollisionAction.IncreaseHealth)
                         {
-                            go1.IncreaseHealth(5);
-                            go2.IncreaseHealth(5);
+                            Character c1 = (Character)go1;
+                            Character c2 = (Character)go2;
+                            c1.IncreaseHealth(5);
+                            c2.IncreaseHealth(5);
                         }   
                         else if (Action == CollisionAction.DecreaseHealth)
                         {
-                            go1.DecreaseHealth(5);
-                            go2.DecreaseHealth(5);
+                            Character c1 = (Character)go1;
+                            Character c2 = (Character)go2;
+                            c1.DecreaseHealth(5);
+                            c2.DecreaseHealth(5);
                         }
                     }
                 }

@@ -13,7 +13,6 @@ namespace GameFramework
         internal PictureBox Pb { get; set; }
         private IMovement Controller;
         internal GameObjectType Type { get; set; }
-        private int Health;
         public GameObject(Image img, int top, int left, IMovement controller, GameObjectType type)
         {
             Pb = new PictureBox
@@ -27,25 +26,6 @@ namespace GameFramework
         };
             Controller = controller;
             Type = type;
-            Health = 100;
-        }
-        public int GetHealth()
-        {
-            return Health;
-        }
-        public void DecreaseHealth(int points)
-        {
-            if (Health - points <= 0)
-                Health = 0;
-            else
-                Health -= points;
-        }
-        public void IncreaseHealth(int points)
-        {
-            if (Health + points >= 100)
-                Health = 100;
-            else
-                Health += points;
         }
         public void Update()
         {
