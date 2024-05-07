@@ -37,7 +37,7 @@ namespace GameFramework
             GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
         }
-        public void AddGameObject(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label)
+        public void AddCharacter(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label)
         {
             Character character = new Character(image, top, left, controller, type,healthBar,label);
             GameObjects.Add((GameObject)character);
