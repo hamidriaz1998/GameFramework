@@ -45,7 +45,7 @@ namespace GravityGame
         private void GameLoop_Tick(object sender, EventArgs e)
         {
             game.Update();
-            progressBar1.Value = game.GetPlayerHealth();
+            PlayerHealth.Value = game.GetPlayerHealth();
         }
     }
 }

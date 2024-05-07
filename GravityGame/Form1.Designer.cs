@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.GameLoop = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.PlayerHealth = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.PlayerHealth);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -55,10 +55,10 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(73, 22);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 0;
+            this.PlayerHealth.Location = new System.Drawing.Point(73, 22);
+            this.PlayerHealth.Name = "progressBar1";
+            this.PlayerHealth.Size = new System.Drawing.Size(100, 23);
+            this.PlayerHealth.TabIndex = 0;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@
         private System.Windows.Forms.Timer GameLoop;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar PlayerHealth;
     }
 }
 
