@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing.Configuration;
+using GameFramework.Interface;
+using GameFramework.Core;
 
 namespace GameFramework
 {
@@ -14,14 +16,20 @@ namespace GameFramework
         private System.Drawing.Point Boundary;
         private int OffsetY = 90;
         private int OffsetX = 115;
+        private Player Player;
 
         public KeyboardHandler(int speed, System.Drawing.Point boundary)
         {
             Speed = speed;
             Boundary = boundary;
         }
+        public void SetPlayer(Player player) {  Player = player; }
         public System.Drawing.Point Move(System.Drawing.Point location)
         {
+            if (Keyboard.IsKeyPressed(Key.Space))
+            {
+
+            }
             if (Keyboard.IsKeyPressed(Key.W))
             {
                 if (location.Y - Speed <= 50)
