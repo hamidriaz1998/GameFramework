@@ -46,6 +46,7 @@
             // GameLoop
             // 
             this.GameLoop.Enabled = true;
+            this.GameLoop.Interval = 30;
             this.GameLoop.Tick += new System.EventHandler(this.GameLoop_Tick);
             // 
             // panel1

@@ -107,16 +107,10 @@
     <None Include="Resources\daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Xd production.gif" />
+    <None Include="Resources\HorizontalFire.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Xdproduction-ezgif.com-rotate.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Xdproduction.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Xdproduction-ezgif.com-rotate54.gif" />
+    <None Include="Resources\VerticalFire.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
