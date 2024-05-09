@@ -136,6 +136,12 @@ namespace GameFramework
             int enemiesCount = GetGameObjectCount(GameObjectType.Enemy);
             return player.GetHealth() == 0 || enemiesCount == 0;
         }
+        public void Reset()
+        {
+            CollisionDetections.Clear();
+            GameObjects.Clear();
+            Score = 0;
+        }
         public void Update()
         {
             for(int i = 0;i<GameObjects.Count;i++)
