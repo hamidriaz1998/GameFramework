@@ -21,7 +21,6 @@ namespace GravityGame
             InitializeComponent();
             this.DoubleBuffered = true;
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // Set Form Properties
@@ -31,12 +30,12 @@ namespace GravityGame
             this.BackgroundImageLayout = ImageLayout.Stretch;
             // Intialize Game Instance
             Boundary = new Point(this.Width - 25 , this.Height - 70);
-            game = Game.GetInstance(this);
+            game = Game.GetInstance(this,Boundary);
             // Add Game Characters
-            game.AddPlayer(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary), GameObjectType.Player,PlayerHealth,PlayerLabel,Resources.VerticalFire);
-            game.AddEnemy(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), GameObjectType.Enemy,RedHealth,RedLabel,Resources.VerticalFire);
-            game.AddEnemy(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down), GameObjectType.Enemy,BlueHealth,BlueLabel,Resources.HorizontalFire);
-            game.AddEnemy(Resources.finalgreen,50,200,new Teleportation(Boundary), GameObjectType.Enemy,GreenHealth,GreenLabel,Resources.VerticalFire);
+            game.AddPlayer(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary),PlayerHealth,PlayerLabel,Resources.VerticalFire);
+            game.AddEnemy(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), RedHealth,RedLabel,Resources.VerticalFire);
+            game.AddEnemy(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down),BlueHealth,BlueLabel,Resources.HorizontalFire);
+            game.AddEnemy(Resources.finalgreen,50,200,new Teleportation(Boundary),GreenHealth,GreenLabel,Resources.VerticalFire);
             // Add Collisions
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
             game.AddCollsion(GameObjectType.Player,GameObjectType.Enemy,CollisionAction.DecreaseHealth);

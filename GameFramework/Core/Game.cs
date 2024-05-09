@@ -49,15 +49,15 @@ namespace GameFramework
             GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
         }
-        public void AddEnemy(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label,Image FireImage)
+        public void AddEnemy(Image image, int top, int left, IMovement controller, ProgressBar healthBar, Label label,Image FireImage)
         {
-            Enemy character = new Enemy(image, top, left, controller, type,healthBar,label,FireImage);
+            Enemy character = new Enemy(image, top, left, controller, healthBar,label,FireImage);
             GameObjects.Add(character);
             GameForm.Controls.Add(character.Pb);
         }
-        public void AddPlayer(Image image, int top, int left, IMovement controller, GameObjectType type, ProgressBar healthBar, Label label,Image FireImage)
+        public void AddPlayer(Image image, int top, int left, IMovement controller, ProgressBar healthBar, Label label,Image FireImage)
         {
-            Player player = new Player(image, top, left, controller, type, healthBar, label, FireImage);
+            Player player = new Player(image, top, left, controller, healthBar, label, FireImage);
             GameObjects.Add(player);
             GameForm.Controls.Add(player.Pb);
         }

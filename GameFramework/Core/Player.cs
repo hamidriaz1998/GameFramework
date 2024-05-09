@@ -11,7 +11,7 @@ namespace GameFramework.Core
 {
     public class Player : Character
     {
-        public Player(Image img, int top, int left, IMovement controller, GameObjectType type, ProgressBar HealthBar, Label label, Image fireImage) : base(img, top, left, controller, type, HealthBar, label, fireImage)
+        public Player(Image img, int top, int left, IMovement controller, ProgressBar HealthBar, Label label, Image fireImage) : base(img, top, left, controller, GameObjectType.Player, HealthBar, label, fireImage)
         {
             var KeyController = (KeyboardHandler)controller;
             KeyController.SetPlayer(this);

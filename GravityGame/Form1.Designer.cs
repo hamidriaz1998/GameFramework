@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.GameLoop = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ScoreLabel = new System.Windows.Forms.Label();
             this.BlueLabel = new System.Windows.Forms.Label();
             this.BlueHealth = new System.Windows.Forms.ProgressBar();
             this.GreenLabel = new System.Windows.Forms.Label();
@@ -39,14 +40,13 @@
             this.RedHealth = new System.Windows.Forms.ProgressBar();
             this.PlayerLabel = new System.Windows.Forms.Label();
             this.PlayerHealth = new System.Windows.Forms.ProgressBar();
-            this.ScoreLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameLoop
             // 
             this.GameLoop.Enabled = true;
-            this.GameLoop.Interval = 10;
+            this.GameLoop.Interval = 30;
             this.GameLoop.Tick += new System.EventHandler(this.GameLoop_Tick);
             // 
             // panel1
@@ -66,6 +66,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 59);
             this.panel1.TabIndex = 0;
+            // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ScoreLabel.Location = new System.Drawing.Point(846, 27);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(63, 18);
+            this.ScoreLabel.TabIndex = 8;
+            this.ScoreLabel.Text = "Score: ";
             // 
             // BlueLabel
             // 
@@ -138,17 +149,6 @@
             this.PlayerHealth.Name = "PlayerHealth";
             this.PlayerHealth.Size = new System.Drawing.Size(100, 23);
             this.PlayerHealth.TabIndex = 0;
-            // 
-            // ScoreLabel
-            // 
-            this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ScoreLabel.Location = new System.Drawing.Point(846, 27);
-            this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(63, 18);
-            this.ScoreLabel.TabIndex = 8;
-            this.ScoreLabel.Text = "Score: ";
             // 
             // Form1
             // 
