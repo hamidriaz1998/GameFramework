@@ -33,8 +33,8 @@ namespace GravityGame
             game = Game.GetInstance(this,Boundary);
             // Add Game Characters
             game.AddPlayer(Resources.finalship, 880,840,new KeyboardHandler(5,Boundary),PlayerHealth,PlayerLabel,Resources.VerticalFire);
-            game.AddEnemy(Resources.finalred,50,840,new HorizontalPatrol(5,Boundary,Directions.Left), RedHealth,RedLabel,Resources.VerticalFire,Directions.Down);
-            game.AddEnemy(Resources.FinalEnemy,50,1800,new VerticalPatrol(5,Boundary,Directions.Down),BlueHealth,BlueLabel,Resources.HorizontalFire, Directions.Left);
+            game.AddEnemy(Resources.finalred,50,840,new HorizontalPatrol(4,Boundary,Directions.Left), RedHealth,RedLabel,Resources.VerticalFire,Directions.Down);
+            game.AddEnemy(Resources.FinalEnemy,50,1800,new VerticalPatrol(4,Boundary,Directions.Down),BlueHealth,BlueLabel,Resources.HorizontalFire, Directions.Left);
             game.AddEnemy(Resources.finalgreen,50,200,new Teleportation(Boundary),GreenHealth,GreenLabel,Resources.VerticalFire,Directions.Down);
             // Add Collisions
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);

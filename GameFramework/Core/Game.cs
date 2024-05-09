@@ -91,7 +91,7 @@ namespace GameFramework
             var enemies = GameObjects.Where(go => go.Type == GameObjectType.Enemy).ToList().Cast<Enemy>();
             foreach (var enemy in enemies)
             {
-                if (FireTurn.Next(1, 10) % 7 == 0)
+                if (FireTurn.Next(1, 15)  == 7)
                 {
                     enemy.Fire();
                     break;

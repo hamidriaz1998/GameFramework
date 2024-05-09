@@ -29,7 +29,7 @@ namespace GameFramework.Core
                 FireTop += 40;
                 FireLeft -= 20;
             }
-            Game.GetInstance().AddGameObject(FireImage, FireTop, FireLeft, new BulletMovement(15, FireDirection), GameObjectType.EnemyBullet);
+            Game.GetInstance().AddGameObject(FireImage, FireTop, FireLeft, new BulletMovement(10, FireDirection), GameObjectType.EnemyBullet);
         }
     }
 }
