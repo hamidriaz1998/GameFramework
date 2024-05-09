@@ -56,8 +56,12 @@ namespace GravityGame
             if (game.IsGameOver())
             {
                 GameLoop.Enabled = false;
-                MessageBox.Show("Your Score: " + game.GetScore());
-                Application.Exit();
+                int score = game.GetScore();
+                game.Reset();
+                this.Hide();
+                Form f = new GameOver(score);
+                f.ShowDialog();
+                this.Close();
             }
         }
     }
