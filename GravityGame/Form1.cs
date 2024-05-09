@@ -53,6 +53,12 @@ namespace GravityGame
         {
             game.Update();
             ScoreLabel.Text = "Score: " + game.GetScore();
+            if (game.IsGameOver())
+            {
+                GameLoop.Enabled = false;
+                MessageBox.Show("Your Score: " + game.GetScore());
+                Application.Exit();
+            }
         }
     }
 }

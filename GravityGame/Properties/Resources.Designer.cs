@@ -93,6 +93,17 @@ namespace GravityGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap epic_saga_unfolds_space_wars_time_travel_and_the_big_bang_transformed_ai_generated_photo {
+            get {
+                object obj = ResourceManager.GetObject("epic-saga-unfolds-space-wars-time-travel-and-the-big-bang-transformed-ai-generate" +
+                        "d-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FinalEnemy {
             get {
                 object obj = ResourceManager.GetObject("FinalEnemy", resourceCulture);
