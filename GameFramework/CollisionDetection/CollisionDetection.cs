@@ -1,11 +1,9 @@
 ﻿using GameFramework.Core;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GameFramework{
+namespace GameFramework
+{
     internal class CollisionDetection
     {
         private GameObjectType Type1;
@@ -17,35 +15,64 @@ namespace GameFramework{
             Type2 = type2;
             Action = action;
         }
+        private bool IsCharacter(GameObjectType type)
+        {
+            return type == GameObjectType.Player || type == GameObjectType.Enemy;
+        }
+        private bool IsBullet(GameObjectType type)
+        {
+            return type == GameObjectType.PlayerBullet || type == GameObjectType.EnemyBullet;
+        }
+        private void IncreaseHealth(GameObject go)
+        {
+            if (IsCharacter(go.Type))
+            {
+                var c = (Character)go;
+                c.IncreaseHealth(3);
+            }
+            else if (IsBullet(go.Type))
+            {
+                Game.GetInstance().RemoveGameObject(go);
+            }
+        }
+        private void DecreaseHealth(GameObject go)
+        {
+            if (IsCharacter(go.Type))
+            {
+                var c = (Character)go;
+                c.DecreaseHealth(3);
+            }
+            else if (IsBullet(go.Type))
+            {
+                Game.GetInstance().RemoveGameObject(go);
+            }
+        }
         public void CheckCollision(List<GameObject> gameObjects)
         {
-            var type1Objects = gameObjects.Where(go => go.Type == Type1);
-            var type2Objects = gameObjects.Where(go => go.Type == Type2);
-            foreach (GameObject go1 in type1Objects)
+            var type1Objects = gameObjects.Where(go => go.Type == Type1).ToArray();
+            var type2Objects = gameObjects.Where(go => go.Type == Type2).ToArray();
+            for (int i = 0; i < type1Objects.Count(); i++)
             {
-                foreach (GameObject go2 in type2Objects)
+                for (int j = 0; j < type2Objects.Count(); j++)
                 {
+                    var go1 = type1Objects[i];
+                    var go2 = type2Objects[j];
                     if (go1 == go2)
                     {
                         // To avoid checking collision with self
                         continue;
                     }
                     if (go1.Pb.Bounds.IntersectsWith(go2.Pb.Bounds))
-                    // TODO: Implement collision action
                     {
                         if (Action == CollisionAction.IncreaseHealth)
                         {
-                            Character c1 = (Character)go1;
-                            Character c2 = (Character)go2;
-                            c1.IncreaseHealth(1);
-                            c2.IncreaseHealth(1);
-                        }   
+                            IncreaseHealth(go1);
+                            IncreaseHealth(go2);
+                        }
                         else if (Action == CollisionAction.DecreaseHealth)
                         {
-                            Character c1 = (Character)go1;
-                            Character c2 = (Character)go2;
-                            c1.DecreaseHealth(1);
-                            c2.DecreaseHealth(1);
+                            DecreaseHealth(go1);
+                            DecreaseHealth(go2);
                         }
                     }
                 }

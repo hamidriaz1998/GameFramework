@@ -37,8 +37,14 @@ namespace GravityGame
             game.AddEnemy(Resources.FinalEnemy,50,1800,new VerticalPatrol(4,Boundary,Directions.Down),BlueHealth,BlueLabel,Resources.HorizontalFire, Directions.Left);
             game.AddEnemy(Resources.finalgreen,50,200,new Teleportation(Boundary),GreenHealth,GreenLabel,Resources.VerticalFire,Directions.Down);
             // Add Collisions
+            // Increase Enemy Health when they collide with each other
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
+            // Decrease Health of both player and enemy when they collide
             game.AddCollsion(GameObjectType.Player,GameObjectType.Enemy,CollisionAction.DecreaseHealth);
+            // Decrease enemy health on collision with player bullet
+            game.AddCollsion(GameObjectType.PlayerBullet, GameObjectType.Enemy, CollisionAction.DecreaseHealth);
+            // Decrease player health on collision with enmey bullet
+            game.AddCollsion(GameObjectType.EnemyBullet, GameObjectType.Player, CollisionAction.DecreaseHealth);
         }
 
         private void GameLoop_Tick(object sender, EventArgs e)

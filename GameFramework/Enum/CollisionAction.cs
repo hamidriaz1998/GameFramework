@@ -4,6 +4,7 @@
     {
         IncreaseHealth,
         DecreaseHealth,
-        Kill,
+        IncreaseScore,
+        DecreaseScore,
     }
 }
