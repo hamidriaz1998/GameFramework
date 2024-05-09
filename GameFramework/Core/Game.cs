@@ -141,6 +141,7 @@ namespace GameFramework
             CollisionDetections.Clear();
             GameObjects.Clear();
             Score = 0;
+            Instance = null;
         }
         public void Update()
         {
