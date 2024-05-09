@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameFramework.Core.Character">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAEBEAACAABAAACCAAAA=</HashCode>
+      <FileName>Core\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Core.Enemy">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Core.Player">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.HorizontalPatrol">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAACAAAAABAAAAAAAAAAAAAAAAhAA=</HashCode>
+      <FileName>Movement\HorizontalPatrol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.VerticalPatrol">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAACAAAAABAAAAAAAAAAAAAAAAhAA=</HashCode>
+      <FileName>Movement\VerticalPatrol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.084" />
+  </Class>
+  <Class Name="GameFramework.GameObject">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Core\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.KeyboardHandler">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAABAAAAAAAAABAAAAAADAAAAAAQAABAA=</HashCode>
+      <FileName>Movement\KeyboardHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Movement.BulletMovement">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movement\BulletMovement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Game">
+    <Position X="7" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAZgAEUEAIAIAAgAAABCAAAABgAQAAAAQAgAgAGABAA=</HashCode>
+      <FileName>Core\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GameFramework.IMovement">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IMovement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
