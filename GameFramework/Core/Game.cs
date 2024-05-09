@@ -86,6 +86,13 @@ namespace GameFramework
         }
         public int GetScore() { return Score; }
         public void IncreaseScore(int points) { Score += points; }
+        public void DecreaseScore(int points)
+        {
+            if (Score - points <= 0)
+                Score = 0;
+            else
+                Score -= points;
+        }
         private void EnemyFire()
         {
             var enemies = GameObjects.Where(go => go.Type == GameObjectType.Enemy).ToList().Cast<Enemy>();
@@ -123,6 +130,12 @@ namespace GameFramework
                 }
             }
         }
+        public bool IsGameOver()
+        {
+            var player = (Player)GameObjects.Find(go => go.Type == GameObjectType.Player);
+            int enemiesCount = GetGameObjectCount(GameObjectType.Enemy);
+            return player.GetHealth() == 0 || enemiesCount == 0;
+        }
         public void Update()
         {
             for(int i = 0;i<GameObjects.Count;i++)
@@ -136,14 +149,6 @@ namespace GameFramework
             }
             RemoveOutOfBoundsBullets();
             RemoveDeadEnemies();
-        }
-
-        internal void DecreaseScore(int points)
-        {
-            if (Score - points <= 0)
-                Score = 0;
-            else
-                Score -= points;
         }
     }
 }
