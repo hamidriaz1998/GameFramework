@@ -15,6 +15,7 @@ namespace GameFramework
         private Form GameForm;
         private List<GameObject> GameObjects;
         private List<CollisionDetection> CollisionDetections;
+        private Random FireTurn = new Random();
         // Singleton pattern
         private static Game Instance;
         public static Game GetInstance(Form form, Point boundary)
@@ -45,13 +46,17 @@ namespace GameFramework
             {
                 return;
             }
+            if (type == GameObjectType.EnemyBullet && GetGameObjectCount(GameObjectType.EnemyBullet) > 5)
+            {
+                return;
+            }
             GameObject go = new GameObject(image, top, left,controller,type);
             GameObjects.Add(go);
             GameForm.Controls.Add(go.Pb);
         }
-        public void AddEnemy(Image image, int top, int left, IMovement controller, ProgressBar healthBar, Label label,Image FireImage)
+        public void AddEnemy(Image image, int top, int left, IMovement controller, ProgressBar healthBar, Label label,Image FireImage, Directions fireDirection)
         {
-            Enemy character = new Enemy(image, top, left, controller, healthBar,label,FireImage);
+            Enemy character = new Enemy(image, top, left, controller, healthBar,label,FireImage,fireDirection);
             GameObjects.Add(character);
             GameForm.Controls.Add(character.Pb);
         }
@@ -81,6 +86,18 @@ namespace GameFramework
         }
         public int GetScore() { return Score; }
         public void IncreaseScore(int points) { Score += points; }
+        private void EnemyFire()
+        {
+            var enemies = GameObjects.Where(go => go.Type == GameObjectType.Enemy).ToList().Cast<Enemy>();
+            foreach (var enemy in enemies)
+            {
+                if (FireTurn.Next(1, 10) % 7 == 0)
+                {
+                    enemy.Fire();
+                    break;
+                }
+            }
+        }
         private void RemoveOutOfBoundsBullets()
         {
             var bullets = GameObjects.Where(go => go.Type == GameObjectType.PlayerBullet || go.Type == GameObjectType.EnemyBullet).ToList();
@@ -99,6 +116,7 @@ namespace GameFramework
             {
                 GameObjects[i].Update();
             }
+            EnemyFire();
             foreach (var cd in CollisionDetections)
             {
                 cd.CheckCollision(GameObjects);

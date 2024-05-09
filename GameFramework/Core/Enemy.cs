@@ -11,12 +11,14 @@ namespace GameFramework.Core
 {
     internal class Enemy : Character
     {
-        public Enemy(Image img, int top, int left, IMovement controller, ProgressBar HealthBar, Label label, Image fireImage) : base(img, top, left, controller, GameObjectType.Enemy, HealthBar, label, fireImage)
+        private Directions FireDirection;
+        public Enemy(Image img, int top, int left, IMovement controller, ProgressBar HealthBar, Label label, Image fireImage, Directions fireDirection) : base(img, top, left, controller, GameObjectType.Enemy, HealthBar, label, fireImage)
         {
+            FireDirection = fireDirection;
         }
         public override void Fire()
         {
-            Game.GetInstance().AddGameObject(FireImage, Pb.Top, Pb.Left, new BulletMovement(15, Directions.Down), GameObjectType.EnemyBullet);
+            Game.GetInstance().AddGameObject(FireImage, Pb.Top, Pb.Left, new BulletMovement(15, FireDirection), GameObjectType.EnemyBullet);
         }
     }
 }
