@@ -66,7 +66,7 @@ namespace GameFramework
                     {
                         if (Action == CollisionAction.IncreaseScore)
                         {
-                            ame.GetInstance().IncreaseScore(5);
+                            Game.GetInstance().IncreaseScore(5);
                         }
                         else if (Action == CollisionAction.DecreaseScore)
                         {

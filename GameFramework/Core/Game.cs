@@ -110,6 +110,19 @@ namespace GameFramework
                 }
             }
         }
+        private void RemoveDeadEnemies()
+        {
+            var enemies = GameObjects.Where(go => go.Type == GameObjectType.Enemy).ToList().Cast<Enemy>();
+            foreach(var enemy in enemies)
+            {
+                if (enemy.GetHealth() == 0)
+                {
+                    enemy.UpdateLabelText("Dead");
+                    RemoveGameObject(enemy);
+                    Score += 50;
+                }
+            }
+        }
         public void Update()
         {
             for(int i = 0;i<GameObjects.Count;i++)
@@ -122,6 +135,7 @@ namespace GameFramework
                 cd.CheckCollision(GameObjects);
             }
             RemoveOutOfBoundsBullets();
+            RemoveDeadEnemies();
         }
 
         internal void DecreaseScore(int points)

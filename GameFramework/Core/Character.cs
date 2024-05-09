@@ -21,6 +21,10 @@ namespace GameFramework.Core
             HealthBar.Value = 100;
             FireImage = fireImage;
         }
+        public int GetHealth()
+        {
+            return HealthBar.Value;
+        }
         public void DecreaseHealth(int points)
         {
             if (HealthBar.Value - points <= 0)
