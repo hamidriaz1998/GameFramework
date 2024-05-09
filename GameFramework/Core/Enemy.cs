@@ -18,7 +18,18 @@ namespace GameFramework.Core
         }
         public override void Fire()
         {
-            Game.GetInstance().AddGameObject(FireImage, Pb.Top, Pb.Left, new BulletMovement(15, FireDirection), GameObjectType.EnemyBullet);
+            int FireTop = Pb.Top, FireLeft = Pb.Left;
+            if (FireDirection == Directions.Down)
+            {
+                FireTop += 30;
+                FireLeft += 40;
+            }
+            else
+            {
+                FireTop += 40;
+                FireLeft -= 20;
+            }
+            Game.GetInstance().AddGameObject(FireImage, FireTop, FireLeft, new BulletMovement(15, FireDirection), GameObjectType.EnemyBullet);
         }
     }
 }
