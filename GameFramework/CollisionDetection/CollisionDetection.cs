@@ -64,7 +64,15 @@ namespace GameFramework
                     }
                     if (go1.Pb.Bounds.IntersectsWith(go2.Pb.Bounds))
                     {
-                        if (Action == CollisionAction.IncreaseHealth)
+                        if (Action == CollisionAction.IncreaseScore)
+                        {
+                            ame.GetInstance().IncreaseScore(5);
+                        }
+                        else if (Action == CollisionAction.DecreaseScore)
+                        {
+                            Game.GetInstance().DecreaseScore(5);
+                        }
+                        else if (Action == CollisionAction.IncreaseHealth)
                         {
                             IncreaseHealth(go1);
                             IncreaseHealth(go2);

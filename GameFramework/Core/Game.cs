@@ -123,5 +123,13 @@ namespace GameFramework
             }
             RemoveOutOfBoundsBullets();
         }
+
+        internal void DecreaseScore(int points)
+        {
+            if (Score - points <= 0)
+                Score = 0;
+            else
+                Score -= points;
+        }
     }
 }

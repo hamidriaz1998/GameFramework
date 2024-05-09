@@ -41,9 +41,11 @@ namespace GravityGame
             game.AddCollsion(GameObjectType.Enemy, GameObjectType.Enemy, CollisionAction.IncreaseHealth);
             // Decrease Health of both player and enemy when they collide
             game.AddCollsion(GameObjectType.Player,GameObjectType.Enemy,CollisionAction.DecreaseHealth);
-            // Decrease enemy health on collision with player bullet
+            // Decrease enemy health and increase player score on collision with player bullet
+            game.AddCollsion(GameObjectType.PlayerBullet, GameObjectType.Enemy, CollisionAction.IncreaseScore);
             game.AddCollsion(GameObjectType.PlayerBullet, GameObjectType.Enemy, CollisionAction.DecreaseHealth);
-            // Decrease player health on collision with enmey bullet
+            // Decrease player health and score on collision with enmey bullet
+            game.AddCollsion(GameObjectType.EnemyBullet, GameObjectType.Player, CollisionAction.DecreaseScore);
             game.AddCollsion(GameObjectType.EnemyBullet, GameObjectType.Player, CollisionAction.DecreaseHealth);
         }
 
