@@ -88,7 +88,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "MainMenu";
-            this.Text = "GameOver";
+            this.Text = "Space Wars";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
