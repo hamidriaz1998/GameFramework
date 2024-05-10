@@ -26,7 +26,7 @@ namespace GravityGame
             if (DateTime.Now - LastTeleportTime >= TeleportDelay)
             {
                 int x = Random.Next(0, Boundary.X - 40);
-                int y = Random.Next(50, Boundary.Y - 45);
+                int y = Random.Next(50, Boundary.Y - 100);
                 location = new Point(x, y);
                 LastTeleportTime = DateTime.Now;
             }
